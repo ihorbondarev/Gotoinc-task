@@ -4,20 +4,9 @@ using System.Linq;
 
 namespace Gotoinc_task
 {
-    class WordClass
-    {
-        public int Count { get; set; }
-        public string Word { get; set; }
-    }
     class Program
     {
         static int numberOfTask = 0;
-
-        static class WordObject
-        {
-            static int Count { get; set; }
-            static string Word { get; set; }
-        }
         static void Main(string[] args)
         {
             while (numberOfTask != 9)
@@ -131,8 +120,6 @@ namespace Gotoinc_task
         {
             char[] arr = text.ToCharArray();
 
-            List<WordClass> words = new List<WordClass>();
-
             for (var i = 0; i < arr.Length; i++)
             {
                 if (char.IsPunctuation(arr[i]) && arr[i] != '\'')
@@ -162,23 +149,6 @@ namespace Gotoinc_task
                     Console.WriteLine("\'{0}\' повторилось {1} раз", word.Word, word.Count);
                 }
             }
-
-
-
-
-
-
-            //var result = wordsArr.GroupBy(x => x).OrderBy(x => x.Count()).Where(x => x.Count() > 1).Select(x => new { Word = x.Key, Frequency = x.Count() });
-
-            //if (result.Count() < 3)
-            //{
-            //    result = null;
-            //}
-
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine("Слово: {0}\t Повторилось {1} раз.", item.Word, item.Frequency);
-            //}
         }
     }
 }
